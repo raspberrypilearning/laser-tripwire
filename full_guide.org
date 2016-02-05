@@ -46,7 +46,8 @@ You're going to need a few pieces of equipment to complete this project:
 :HTML_CONTAINER_CLASS: worksheet
 :END:
 - Capacitors are electrical components that store charge.
-[[https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Capacitors_%25287189597135%2529.jpg/640px-Capacitors_%25287189597135%2529.jpg]]
+[[https://upload.wikimedia.org/wikipedia/commons/b/b9/Capacitors_%25287189597135%2529.jpg]]
+
 - When current is fed into a capacitor it will begin to store charge. The voltage across the capacitor will start off low, and increase as the charge builds up.
 - By putting a resistor in series with the capacitor, you can slow the speed at which it charges. With a high resistance, the capacitor will charge slowly. Whereas a low resistance will let it charge quickly.
 - If you time how long it takes the capacitor's voltage to get over 1.8V (or be /on/), you can workout what the resistance of the component in series with it is.

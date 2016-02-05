@@ -8,5 +8,5 @@
   img: buzzer
 - name: 1 x 1μF Capacitor
   img: capacitor
-- name: 1 x thermistor
-  img: thermistor
+- name: 1 x ldr
+  img: ldr

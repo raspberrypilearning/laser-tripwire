@@ -57,16 +57,16 @@ To begin, you're going to create a light sensing circuit with your
 Raspberry Pi.
 1.  Place an LDR into your breadboard, as shown below.
 
-![](file:images/LDR_only.png)
+![](images/LDR_only.png)
 1.  Now place a capacitor in series with the LDR. As the capacitor is a
     polar component, you must make sure the long leg is on the same
     track as the LDR leg.
 
-![](file:images/LDR_and_cap.png)
+![](images/LDR_and_cap.png)
 1.  Finally add jumper leads to connect the two components to your
     Raspberry Pi.
 
-![](file:images/LDR_and_cap_wired.png)
+![](images/LDR_and_cap_wired.png)
 
 Coding a light sensor
 ---------------------
@@ -116,7 +116,7 @@ Wiring up the buzzer
     into the breadboard and connect the longer leg to GPIO 17 and the
     shorter leg into one of the ground pins.
 
-![](file:images/LDR_with_buzzer.png)
+![](images/LDR_with_buzzer.png)
 
 Testing the buzzer
 ------------------
@@ -230,12 +230,12 @@ Packaging it all up
 -   Place jumper leads on the remaining legs, then plug it all back into
     the Raspberry Pi.
 
-![](file:images/IMG_20160204_100554386.jpg)
+![](images/IMG_20160204_100554386.jpg)
 -   You can place the Raspberry Pi and components in a housing to
     conceal them if you wish. Here we have used a plastic box with a
     hole pocked through it, for the straw.
 
-![](file:images/IMG_20160204_101200441.jpg)
+![](images/IMG_20160204_101200441.jpg)
 -   Place your container near a doorway and then affix the laser pointer
     to the wall, so the beam is focused down the straw.
 -   Now run the code and test your laser-tripwire.

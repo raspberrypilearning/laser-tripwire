@@ -1,1 +1,1 @@
-In this resource you will make a Laser-Tripwire using a laser pointer and a Raspberry Pi
+In this resource you will make a laser tripwire, using a laser pointer and a Raspberry Pi.

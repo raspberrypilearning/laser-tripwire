@@ -1,5 +1,5 @@
 You'll also need:
 
-- A Laser Pointer (red works best)
-- A Drinking Straw
+- A laser pointer (red works best)
+- A drinking straw
 - A box or plastic container

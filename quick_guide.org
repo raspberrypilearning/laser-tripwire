@@ -26,7 +26,7 @@ This is a quick guide to creating a Laser-tripwire with a Raspberry Pi.
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: circuit
 :END:
-[[file:~/Resources/laser-trip-wire/images/LDR_buzzer_bb.png]]
+[[file:images/LDR_buzzer_bb.png]]
 ** Code
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: scripts
@@ -58,11 +58,11 @@ This is a quick guide to creating a Laser-tripwire with a Raspberry Pi.
 4. You can alter the triggering ldr value in the code.
 5. It may help to surround the LDR with a cut-down drinking straw, to block out some ambient light.
 6. Once the circuit has been tested, you can wire up the componenets directly to the Raspberry Pi as shown below. (Soldering will increase the longevity of the project).
-[[file:~/Resources/laser-trip-wire/images/IMG_20160204_100554386.jpg]]
+[[file:images/IMG_20160204_100554386.jpg]]
 7. You can place the Raspberry Pi and components in a housing to conceal them if you wish.
-[[file:~/Resources/laser-trip-wire/images/IMG_20160204_101200441.jpg]]
+[[file:images/IMG_20160204_101200441.jpg]]
 ** Video Guide
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: instructions
 :END: 
-[![VIDEO](http://img.youtube.com/vi/4oJiXlPs46o/0.jpg)](http://www.youtube.com/watch?v=4oJiXlPs46o)
+[[https://youtu.be/4oJiXlPs46o][Link to video]]

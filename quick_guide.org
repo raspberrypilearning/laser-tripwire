@@ -6,77 +6,11 @@
 #+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil html-style:nil
 #+TITLE: The Laser-Tripwire: A Quick Guide
 #+AUTHOR: Marc Scott
-
-* COMMENT Use as a template
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: activity
-:END:
-** Learn It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: learn
-:END:
-
-** Research It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: research
-:END:
-
-** Design It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: design
-:END:
-
-** Build It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: build
-:END:
-
-** Test It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: test
-:END:
-
-** Run It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: run
-:END:
-
-** Document It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: document
-:END:
-
-** Code It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: code
-:END:
-
-** Program It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: program
-:END:
-
-** Try It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: try
-:END:
-
-** Badge It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: badge
-:END:
-
-** Save It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: save
-:END:
 * Guide
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: quick
 :END:
-
 This is a quick guide to creating a Laser-tripwire with a Raspberry Pi.
-
 ** Equipment
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: equipment
@@ -127,3 +61,8 @@ This is a quick guide to creating a Laser-tripwire with a Raspberry Pi.
 [[file:~/Resources/laser-trip-wire/images/IMG_20160204_100554386.jpg]]
 7. You can place the Raspberry Pi and components in a housing to conceal them if you wish.
 [[file:~/Resources/laser-trip-wire/images/IMG_20160204_101200441.jpg]]
+** Video Guide
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: instructions
+:END: 
+[![VIDEO](http://img.youtube.com/vi/4oJiXlPs46o/0.jpg)](http://www.youtube.com/watch?v=4oJiXlPs46o)

@@ -1,0 +1,4 @@
+* A Laser-tripwire with a Raspberry Pi
+** [[file:full_guide.org][You can read the full guide here]]
+** [[file:quick_guide.org][You can read the quick guide here]]
+** [[https://youtu.be/4oJiXlPs46o][You can access the video guide here]]

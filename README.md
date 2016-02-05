@@ -1,8 +1,8 @@
-# Example Resource
+# A Raspberry Pi Laser-Tripwire
 
 ![](cover.png)
 
-Short description of the resource
+In this resource you will be making a laser-tripwire. This can be used as a way to catch unwanted intruders coming into your bedroom, or as a game to see if you can avoid triggering the trap.
 
 ## Licence
 
@@ -12,4 +12,4 @@ Unless otherwise specified, everything in this repository is covered by the foll
 
 ***Example Resource*** by the [Raspberry Pi Foundation](http://www.raspberrypi.org) is licenced under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
-Based on a work at https://github.com/raspberrypilearning/example-resource
+Based on a work at https://github.com/raspberrypilearning/laser-tripwire

@@ -1,4 +1,4 @@
 You'll also need:
 
-- Blu tack
-- Scissors
+- A Drinking Straw
+- A box or plastic container

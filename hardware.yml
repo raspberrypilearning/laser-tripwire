@@ -1,8 +1,12 @@
-- name: Raspberry Pi camera module
-  img: camera
 - name: 1 x Solderless breadboard
   img: breadboard
-- name: 2 x Male-to-female jumper leads
+- name: 5 x Male-to-female jumper leads
   img: jumper-male-to-female
-- name: 1 x Tactile button
-  img: tactile-push-button
+- name: 5 x Female-to-female jumper leads
+  img: jumper-female-to-female
+- name: 1 x Piezo Buzzer
+  img: buzzer
+- name: 1 x 1μF Capacitor
+  img: capacitor
+- name: 1 x thermistor
+  img: thermistor

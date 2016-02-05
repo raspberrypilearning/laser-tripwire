@@ -239,9 +239,3 @@ Packaging it all up
 -   Place your container near a doorway and then affix the laser pointer
     to the wall, so the beam is focused down the straw.
 -   Now run the code and test your laser-tripwire.
-
-Video Guide
------------
-
-Below is the link to the video guide for this project [Link to
-video](https://youtu.be/4oJiXlPs46o)

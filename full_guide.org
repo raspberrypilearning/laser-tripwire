@@ -1,0 +1,192 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script> src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:nil creator:nil timestamp:nil toc:nil html-style:nil
+#+TITLE: The Laser-Tripwire: The full guide
+#+AUTHOR: Marc Scott
+
+
+
+* Laser-Tripwire
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: container
+:END:
+** Instructions
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: worksheet
+:END:
+
+In this resource you will be making a laser-tripwire. This can be used as a way to catch unwanted intruders coming into your bedroom, or as a game to see if you can avoid triggering the trap.
+
+** Equipment
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: worksheet
+:END: 
+You're going to need a few pieces of equipment to complete this project:
+
+1. A Raspberry Pi (any model will do, but wiring may vary)
+2. A Laser Pointer
+3. A Breadboard
+4. Female-Male and Female-Female Jumper leads
+5. A Piezo Buzzer
+6. An LDR
+7. A 1μF Capacitor
+
+** Analogue Inputs
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: worksheet
+:END:
+- In the world of electrical engineering, their are two type of input and output (I/O) - Analogue and Digital.
+- Digital I/O is fairly easy to understand. It is either /on/ or /off/, /1/ or /0/.
+- When talking about the voltages and the Raspberry Pi, any input that is approximately below 1.8V is considered /off/ and anything above 1.8V is considered /on/. For output, then 0V is off and 3.3V is on.
+- Analogue I/O is a little trickier. With an analogue input, we can have a range of voltages from 0V up to 3.3V, and the Raspberry Pi is unable to detect exactly what that voltage is.
+[[http://newsimg.bbc.co.uk/media/images/42321000/gif/_42321660_dig_ani_416.gif]]
+- How then can we use a Raspberry Pi to determine the value of an analogue input, if it can only tell when the voltage to a GPIO pin goes above 1.8V?
+** Using a Capacitor for analogue inputs
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: worksheet
+:END:
+- Capacitors are electrical components that store charge.
+[[https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Capacitors_%25287189597135%2529.jpg/640px-Capacitors_%25287189597135%2529.jpg]]
+- When current is fed into a capacitor it will begin to store charge. The voltage across the capacitor will start off low, and increase as the charge builds up.
+- By putting a resistor in series with the capacitor, you can slow the speed at which it charges. With a high resistance, the capacitor will charge slowly. Whereas a low resistance will let it charge quickly.
+- If you time how long it takes the capacitor's voltage to get over 1.8V (or be /on/), you can workout what the resistance of the component in series with it is.
+** Light Dependent Resistors (LDRs)
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: worksheet
+:END:
+- An LDR (sometimes called a photocell) is a special type of resistor.
+[[https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/LDR_1480405_6_7_HDR_Enhancer_1.jpg/480px-LDR_1480405_6_7_HDR_Enhancer_1.jpg]]
+- When light hits the LDR, its resistance is very low, but when it's in the dark its resistance is very high.
+- By placing a capacitor in series with an LDR, the capacitor will charge at different speeds depending on whether it's light or dark.
+** Creating a Light sensing circuit
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: worksheet
+:END:
+To begin, you're going to create a light sensing circuit with your Raspberry Pi.
+1. Place an LDR into your breadboard, as shown below.
+[[file:~/Resources/laser-trip-wire/images/LDR_only.png]]
+2. Now place a capacitor in series with the LDR. As the capacitor is a polar component, you must make sure the long leg is on the same track as the LDR leg.
+[[file:~/Resources/laser-trip-wire/images/LDR_and_cap.png]]
+3. Finally add jumper leads to connect the two components to your Raspberry Pi.
+[[file:~/Resources/laser-trip-wire/images/LDR_and_cap_wired.png]]
+** Coding a light sensor
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: worksheet
+:END: 
+- Luckily most of the complicated code you would have to write, to detect the light levels received by the LDR has been abstracted away by the =gpiozero= library.
+- This library will handle the timing of the charging and discharging of the capcitor for you.
+- Use the following code to set up the light sensor.
+#+begin_src python
+  from gpiozero import LightSensor, Buzzer
+
+  ldr = LightSensor(4)  # alter if using a different pin
+#+end_src
+- Now run the code and switch over to the interpreter.
+- In the interpreter type =ldr.value= to see the light level currently recorded.
+- Now shine the Laser pointer on to the LDR annd typy =ldr.value= into the interpreter again, to see the light level when the LDR is illuminated.
+** Reducing light to the LDR
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: worksheet
+:END: 
+- You probably noticed, that unless you are in dark room, there is litte difference in the measured light levels when the LDR is illuminated by the laser, and when it is not.
+- This can be fixed by reducing the amount of light that the LDR receives from other light sources in the room.
+1. Take an opaque drinking straw and cut a length from it between 2 and 5 cm long.
+2. Insert the head of the LDR into the straw.
+3. Type =ldr.value= into the interpreter again, then once more with the LDR illuminated by the laser.
+- Hopefully you can see a larger difference in the recorded light levels.
+** Wiring up the buzzer
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: worksheet
+:END: 
+1. The Piezo buzzer is a polar component, like the capacitor. Place it into the breadboard and connect the longer leg to GPIO 17 and the shorter leg into one of the ground pins.
+[[file:~/Resources/laser-trip-wire/images/LDR_with_buzzer.png]]
+** Testing the buzzer
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: worksheet
+:END: 
+Next you can test the buzzer is working.
+1. Alter the =import= line so it looks like this, so you can access the =Buzzer= class from =gpiozero=
+#+begin_src python
+from gpiozero import LightSensor, Buzzer
+#+end_src
+2. Next you need to tell the program which pin the buzzer is connected to.
+#+begin_src python
+buzzer = Buzzer(17)
+#+end_src
+3. You script should now look like this:
+#+begin_src python
+  from gpiozero import LightSensor, Buzzer
+
+  ldr = LightSensor(4)  # alter if using a different pin
+  buzzer = Buzzer(17)  # alter if using a different pin
+
+#+end_src
+4. Run your code and then in the interpreter you can type:
+#+begin_src python
+buzzer.on()
+# and
+buzzer.off()
+#+end_src
+to switch the buzzer on and off. If it is not working, check your wiring and pin numbers.
+** The tripwire code
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: worksheet
+:END: 
+- You need a loop, to constantly check the light level hitting the LDR. As long as the light level is high, you can assume the laser beam has not been broken. When the light level drops, the beam has been broken and the buzzer should sound.
+- To do this you can use an infinite loop. This is a loop that will keep going until you quit the program.
+#+begin_src python
+  from gpiozero import LightSensor, Buzzer
+
+  ldr = LightSensor(4)  # alter if using a different pin
+  buzzer = Buzzer(17)  # alter if using a different pin
+
+  while True:
+#+end_src
+- Within the loop, you can use conditional selection to see if the light level falls below some threshold value. Start with =0.5= but adjust it if you need to increase or decrease the sensitivity of the system.
+#+begin_src python
+  from gpiozero import LightSensor, Buzzer
+
+  ldr = LightSensor(4)  # alter if using a different pin
+  buzzer = Buzzer(17)  # alter if using a different pin
+
+  while True:
+      if ldr.value < 0.5:  # adjust this to make the circuit more or less sensitive
+          buzzer.on()
+      else:
+          buzzer.off()
+#+end_src
+- If you were to run this now, it would fail. This is because the =while= loops runs somany times a second, it checks the light level faster than the capacitor charges and discharges. To slow the scrip down, you'll need the =time= library and add a =sleep= into the loop.
+#+begin_src python
+  from gpiozero import LightSensor, Buzzer
+  from time import sleep
+
+  ldr = LightSensor(4)  # alter if using a different pin
+  buzzer = Buzzer(17)  # alter if using a different pin
+
+  while True:
+      sleep(0.1)
+      if ldr.value < 0.5:  # adjust this to make the circuit more or less sensitive
+          buzzer.on()
+          # uncomment the next line to have the alarm trigger for 30 seconds.
+          # sleep(30) 
+      else:
+          buzzer.off()
+#+end_src
+- Run the code and shine the laser onto the LDR.
+- When you break the beam, the buzzer should sound.
+** Packaging it all up
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: worksheet
+:END: 
+- Once the circuit has been tested, you can wire up the componenets directly to the Raspberry Pi as shown below.
+- Place a leg of the LDR and the long leg of the capacitor into a female-female jumper lead, then tape it up.
+- Place jumper leads on the remaining legs, then plug it all back into the Raspberry Pi.
+[[file:~/Resources/laser-trip-wire/images/IMG_20160204_100554386.jpg]]
+- You can place the Raspberry Pi and components in a housing to conceal them if you wish. Here we have used a plastic box with a hole pocked through it, for the straw.
+[[file:~/Resources/laser-trip-wire/images/IMG_20160204_101200441.jpg]]
+- Place your container near a doorway and then afix the laser pointer to the wall, so the beam is focused down the straw.
+- Now run the code and test your laser-tripwire.
+

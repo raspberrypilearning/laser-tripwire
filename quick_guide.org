@@ -1,0 +1,129 @@
+#+STARTUP:indent
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+#+HTML_HEAD_EXTRA: <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='text/css'>
+#+HTML_HEAD_EXTRA: <script> src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+#+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
+#+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil html-style:nil
+#+TITLE: The Laser-Tripwire: A Quick Guide
+#+AUTHOR: Marc Scott
+
+* COMMENT Use as a template
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: activity
+:END:
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+
+** Research It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: research
+:END:
+
+** Design It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: design
+:END:
+
+** Build It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: build
+:END:
+
+** Test It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: test
+:END:
+
+** Run It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: run
+:END:
+
+** Document It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: document
+:END:
+
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+
+** Program It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: program
+:END:
+
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+
+** Badge It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: badge
+:END:
+
+** Save It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: save
+:END:
+* Guide
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: quick
+:END:
+
+This is a quick guide to creating a Laser-tripwire with a Raspberry Pi.
+
+** Equipment
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: equipment
+:END: 
+1. A Raspberry Pi (any model will do, but wiring may vary)
+2. A Laser Pointer
+3. A Breadboard
+4. Female-Male and Female-Female Jumper leads
+5. A Piezo Buzzer
+6. An LDR
+7. A 1μF Capacitor
+** The Circuit
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: circuit
+:END:
+[[file:~/Resources/laser-trip-wire/images/LDR_buzzer_bb.png]]
+** Code
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: scripts
+:END: 
+#+begin_src python
+  from gpiozero import LightSensor, Buzzer
+  from time import sleep
+
+  ldr = LightSensor(4)  # alter if using a different pin
+  buzzer = Buzzer(17)  # alter if using a different pin
+
+  while True:
+      sleep(0.1)
+      if ldr.value < 0.5:  # adjust this to make the circuit more or less sensitive
+          buzzer.on()
+          # uncomment the next line to have the alarm trigger for 30 seconds.
+          # sleep(30) 
+      else:
+          buzzer.off()
+#+end_src
+
+** Instruction
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: instructions
+:END: 
+1. Wire up the Raspberry Pi and componenets as shown in the diagram above.
+2. Write the code as shown above and run.
+3. With the laser pointer aimed at the LDR, the buzzer should be off. If the beam is broken the buzzer should come on.
+4. You can alter the triggering ldr value in the code.
+5. It may help to surround the LDR with a cut-down drinking straw, to block out some ambient light.
+6. Once the circuit has been tested, you can wire up the componenets directly to the Raspberry Pi as shown below. (Soldering will increase the longevity of the project).
+[[file:~/Resources/laser-trip-wire/images/IMG_20160204_100554386.jpg]]
+7. You can place the Raspberry Pi and components in a housing to conceal them if you wish.
+[[file:~/Resources/laser-trip-wire/images/IMG_20160204_101200441.jpg]]

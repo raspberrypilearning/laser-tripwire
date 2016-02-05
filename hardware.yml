@@ -4,9 +4,9 @@
   img: jumper-male-to-female
 - name: 5 x Female-to-female jumper leads
   img: jumper-female-to-female
-- name: 1 x Piezo Buzzer
+- name: 1 x Piezo buzzer
   img: buzzer
-- name: 1 x 1μF Capacitor
+- name: 1 x 1μF capacitor
   img: capacitor
-- name: 1 x ldr
+- name: 1 x LDR
   img: ldr

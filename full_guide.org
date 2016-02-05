@@ -186,6 +186,13 @@ to switch the buzzer on and off. If it is not working, check your wiring and pin
 [[file:images/IMG_20160204_101200441.jpg]]
 - Place your container near a doorway and then afix the laser pointer to the wall, so the beam is focused down the straw.
 - Now run the code and test your laser-tripwire.
+** Badging this project
+- You can gain a badge for this project by  evidencing the following and uploading it to the [[https://www.raspberrypi.org/education/badges][Raspberry Badge Site]]
+  - Modify the project for the laser tripwire, so that it acts as race timer.
+  - Add a button into your circuit
+  - When the button is pushed, the timer should start
+  - Each time the laser beam is broken, it should record the time.
+  - When the button is pushed a second time the program is ended the times should be displayed.
 ** Video Guide
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: instructions

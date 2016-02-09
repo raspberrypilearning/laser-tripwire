@@ -42,15 +42,15 @@ To begin, you're going to create a light sensing circuit with your Raspberry Pi.
 
 1.  Place an LDR into your breadboard, as shown below:
 
-![](images/LDR_only.png)
+![](images/Laser-tripwire_1-01.png)
 
 1.  Now place a capacitor in series with the LDR. As the capacitor is a polar component, you must make sure the long leg is on the same track as the LDR leg.
 
-![](images/LDR_and_cap.png)
+![](images/Laser-tripwire_2-01.png)
 
 1.  Finally, add jumper leads to connect the two components to your Raspberry Pi.
 
-![](images/LDR_and_cap_wired.png)
+![](images/Laser-tripwire_3-01.png)
 
 ## Coding a light sensor
 
@@ -83,7 +83,7 @@ Wiring up the buzzer
 
 1.  The piezo buzzer is a polar component, like the capacitor. Place it into the breadboard, then connect the longer leg to GPIO 17 and the shorter leg into one of the ground pins.
 
-![](images/LDR_with_buzzer.png)
+![](images/Laser-tripwire_4-01.png)
 
 ## Testing the buzzer
 

@@ -10,7 +10,7 @@ When talking about voltages and the Raspberry Pi, any input that is approximatel
 
 Analogue I/O is a little trickier. With an analogue input, we can have a range of voltages from 0V up to 3.3V, and the Raspberry Pi is unable to detect exactly what that voltage is.
 
-![](http://newsimg.bbc.co.uk/media/images/42321000/gif/_42321660_dig_ani_416.gif)
+![](images/analogue-digital.png)
 
 How, then, can we use a Raspberry Pi to determine the value of an analogue input, if it can only tell when the voltage to a GPIO pin goes above 1.8V?
 

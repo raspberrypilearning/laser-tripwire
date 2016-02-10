@@ -18,7 +18,7 @@ How, then, can we use a Raspberry Pi to determine the value of an analogue input
 
 Capacitors are electrical components that store charge.
 
-![](http://ecee.colorado.edu/~mathys/ecen1400/labs/CapacitorsInKit.jpg)
+![](images/capacitor.png)
 
 When current is fed into a capacitor it will begin to store charge. The voltage across the capacitor will start off low, and increase as the charge builds up.
 
@@ -30,7 +30,7 @@ If you time how long it takes the capacitor's voltage to get over 1.8V (or be *o
 
 An LDR (sometimes called a photocell) is a special type of resistor.
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/LDR_1480405_6_7_HDR_Enhancer_1.jpg/480px-LDR_1480405_6_7_HDR_Enhancer_1.jpg)
+![](images/ldr.png)
 
 When light hits the LDR, its resistance is very low, but when it's in the dark its resistance is very high.
 

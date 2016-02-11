@@ -6,7 +6,7 @@
   img: jumper-female-to-female
 - name: 1 x Buzzer
   img: piezo_buzzer
-- name: 1 x 1μ Capacitor
+- name: 1 x 1μF Capacitor
   img: capacitor
 - name: 1 x LDR
   img: ldr

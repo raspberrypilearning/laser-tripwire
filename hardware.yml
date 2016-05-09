@@ -8,5 +8,5 @@
   img: piezo-buzzer
 - name: 1 x 1μF Capacitor
   img: capacitor
-- name: 1 x LDR
+- name: 1 x Light-dependent resistor (LDR)
   img: ldr

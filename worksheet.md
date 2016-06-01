@@ -188,3 +188,7 @@ You can place the Raspberry Pi and components in a housing to conceal them if yo
 
 1.  Place your container near a doorway and then affix the laser pointer to the wall, so the beam is focused down the straw.
 1.  Now run the code and test your laser tripwire.
+
+## What Next?
+- Maybe you could try having a look at [Getting Started with the Twitter API](https://www.raspberrypi.org/learning/getting-started-with-the-twitter-api/), and have the tripwire tweet you when it is triggered.
+- Why not add a PiCamera and use it to take a photo of the intruder? You can use [Getting Started with Picamera](https://www.raspberrypi.org/learning/getting-started-with-picamera/) to help you out.

@@ -1,6 +1,6 @@
 # A Raspberry Pi laser tripwire
 
-In this resource you will be making a laser tripwire. This can be used as a way to catch unwanted intruders coming into your bedroom, or as a game to see if you can avoid triggering the trap.
+In this resource you will be making a laser tripwire. This can be used as a way to catch unwanted intruders coming into your bedroom, or as a prank to give somebody a little bit of a fright when they come into your house.
 
 ## Analogue inputs
 
@@ -59,7 +59,7 @@ Luckily, most of the complicated code you would have to write to detect the ligh
 Use the following code to set up the light sensor:
 
 ```python
-  from gpiozero import LightSensor, Buzzer
+  from gpiozero import LightSensor
 
   ldr = LightSensor(4)  # alter if using a different pin
 ```
@@ -70,11 +70,9 @@ Now run the code and switch over to the interpreter. Type `ldr.value` into the i
 
 You probably noticed that unless you are in a dark room, there is little difference in the measured light levels when the LDR is illuminated by the laser, and when it's not. This can be fixed by reducing the amount of light that the LDR receives from other light sources in the room.
 
-1.  Take an opaque drinking straw and cut a length from it between 2 and
-    5 cm long.
+1.  Take an opaque drinking straw and cut a length from it between 2 and 5 cm long.
 2.  Insert the head of the LDR into the straw.
-3.  Type `ldr.value` into the interpreter again, then once more with the
-    LDR illuminated by the laser.
+3.  Type `ldr.value` into the interpreter again, then once more with the LDR illuminated by the laser.
 
 You should now see a larger difference in the recorded light levels.
 
@@ -188,6 +186,42 @@ You can place the Raspberry Pi and components in a housing to conceal them if yo
 
 1.  Place your container near a doorway and then affix the laser pointer to the wall, so the beam is focused down the straw.
 1.  Now run the code and test your laser tripwire.
+
+## Using a sound file and a speaker
+
+1. If you have a speaker that you can plug into your Raspberry Pi, you can get your program to play a scary sound instead of sounding a buzzer.
+
+1. First you'll need to choose an appropriate sound file. [This site](http://soundbible.com/royalty-free-sounds-1.html) has lots of sounds that you can use, and [this one](http://soundbible.com/71-Dog-Growling-And-Barking.html) is particularly appropriate. Once you have your sound you can use it in your program.
+
+1. To play the sound with Python, you'll need to use the `pygame` library. Add this line below your `gpiozero` import.
+
+    ``` python
+    import pygame
+    ```
+1. Next you need to `initialise` pygame and it's sound mixer.
+
+    ``` python
+    pygame.init()
+    pygame.mixer.init()
+    ```
+1. The sound file you used needs to be loaded up by your script. You can give it any name you like, just make sure you get the filename correct. You'll also need the length of the sound clip.
+
+    ``` python
+    growl = pygame.mixer.Sound('growl.mp3')
+    length = growl.get_length()
+    ```
+1. Now, within the `while True:` loop, you can play the sound file instead of making the buzzer sound, and have it stop once the sound has finished playing.
+
+    ``` python
+    while True:
+        sleep(0.1)
+        if ldr.value < 0.5:  # adjust this to make the circuit more or less sensitive
+            growl.play()
+            sleep(length)
+            growl.stop()
+
+    ```
+1. Have a play with different sounds to get the one that is most appropriate for your environment. Maybe you could use this on Halloween with a [witch's cackle](http://soundbible.com/33-Evil-Laugh-Cackle.html), to catch the kids *trick or treating*.
 
 ## What Next?
 - Maybe you could try having a look at [Getting Started with the Twitter API](https://www.raspberrypi.org/learning/getting-started-with-the-twitter-api/), and have the tripwire tweet you when it is triggered.

@@ -198,7 +198,7 @@ You can place the Raspberry Pi and components in a housing to conceal them if yo
     ``` python
     import pygame
     ```
-1. Next you need to `initialise` pygame and it's sound mixer.
+1. Next you need to initialise Pygame and its sound mixer.
 
     ``` python
     pygame.init()
@@ -221,8 +221,8 @@ You can place the Raspberry Pi and components in a housing to conceal them if yo
             growl.stop()
 
     ```
-1. Have a play with different sounds to get the one that is most appropriate for your environment. Maybe you could use this on Halloween with a [witch's cackle](http://soundbible.com/33-Evil-Laugh-Cackle.html), to catch the kids *trick or treating*.
+1. Have a play with different sounds to get the one that is most appropriate for your environment. Maybe you could use this on Halloween with a [witch's cackle](http://soundbible.com/33-Evil-Laugh-Cackle.html), to catch the kids trick or treating.
 
 ## What Next?
 - Maybe you could try having a look at [Getting Started with the Twitter API](https://www.raspberrypi.org/learning/getting-started-with-the-twitter-api/), and have the tripwire tweet you when it is triggered.
-- Why not add a PiCamera and use it to take a photo of the intruder? You can use [Getting Started with Picamera](https://www.raspberrypi.org/learning/getting-started-with-picamera/) to help you out.
+- Why not add a Raspberry Pi Camera Module and use it to take a photo of the intruder? You can use [Getting Started with Picamera](https://www.raspberrypi.org/learning/getting-started-with-picamera/) to help you out.

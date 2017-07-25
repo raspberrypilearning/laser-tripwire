@@ -1,0 +1,30 @@
+---
+title: Making a laser tripwire with a Raspberry Pi
+hero_image: images/banner.png
+description: In this resource you will be making a laser tripwire using a Raspberry
+  Pi and a laser pen
+original_url: https://raspberrypi.org/learning/laser-tripwire
+theme: red
+duration: 2
+listed: false
+ingredient: false
+copyedit: true
+curriculum: creator, design-0, programming-0, phys-comp-0, manufacture-0, community-0
+interests: ''
+technologies: rpi, physical computing, python
+site_areas: ''
+steps:
+- title: Introduction
+- title: What you will need
+- title: A Raspberry Pi laser tripwire
+- title: Analogue inputs
+- title: Light-dependent resistors (LDRs)
+- title: Creating a light sensing circuit
+- title: Coding a light sensor
+- title: Reducing light to the LDR
+- title: Testing the buzzer
+- title: The tripwire code
+- title: Packaging it all up
+- title: Using a sound file and a speaker
+- title: What Next?
+

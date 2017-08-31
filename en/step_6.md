@@ -1,16 +1,5 @@
-## Creating a light sensing circuit
-
-To begin, you're going to create a light sensing circuit with your Raspberry Pi.
-
--  Place an LDR into your breadboard, as shown below:
-
-![](images/Laser-tripwire_1-01.png)
-
--  Now place a capacitor in series with the LDR. As the capacitor is a polar component, you must make sure the long leg is on the same track as the LDR leg.
-
-![](images/Laser-tripwire_2-01.png)
-
--  Finally, add jumper leads to connect the two components to your Raspberry Pi.
-
-![](images/Laser-tripwire_3-01.png)
-
+## What next?
+--- challenge ---
+- You could try and include other events that are triggered when the tripwire is broken. How about sending a [tweet](python-sending-a-tweet), or taking a [picture](rpi-picamera-take-photo) of the intruder?
+- You could use a laser component that can be run directly from the Raspberry Pi's GPIO pins. Here's an [example of a laser](https://www.rapidonline.com/laserfuchs-70103984-red-class-2-laser-10m-1mw-3-12vdc-25ma-650nm-wavelength-57-5868) you could buy.
+--- /challenge ---

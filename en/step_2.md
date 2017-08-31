@@ -1,10 +1,15 @@
 ## What you will need
 
 ### Hardware
+- A Raspberry Pi
+- A breadboard
+- A 1µF capacitor
+- A light-dependent resistor (LDR)
+- 3 female-male jumper leads (for testing)
+- 3 female-female jumper leads
+- A laser pointer
+- A drinking straw
 
-* 1 x Solderless breadboard
-* 5 x Male-to-female jumper leads
-* 5 x Female-to-female jumper leads
-* 1 x Buzzer
-* 1 x 1μF Capacitor
-* 1 x Light-dependent resistor (LDR)
+### Software
+
+- All required software is pre-installed on Raspbian

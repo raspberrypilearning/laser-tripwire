@@ -1,0 +1,18 @@
+title: A Raspberry Pi laser tripwire
+hero_image: images/banner.png
+description: Build a laser tripwire with Python and a Raspberry Pi
+original_url: https://www.raspberrypi.org/learning/laser-tripwire/
+theme: cc-prototype
+duaration: 2
+listed: false
+ingredient: false
+copyedit: false
+interestes: "jokes"
+technologies: "rpi, python, physical computing"
+steps:
+  - title: Introduction
+  - title: What you will need
+  - title: Detecting a broken beam
+  - title: Making some noise
+  - title: Building your laser tripwire
+  - title: What next?

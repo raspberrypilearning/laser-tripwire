@@ -3,10 +3,10 @@ hero_image: images/banner.png
 description: Build a laser tripwire with Python and a Raspberry Pi
 original_url: https://www.raspberrypi.org/learning/laser-tripwire/
 theme: cc-prototype
-duaration: 2
-listed: false
+duration: 2
+listed: true
 ingredient: false
-copyedit: false
+copyedit: true
 interestes: "jokes"
 technologies: "rpi, python, physical computing"
 steps:

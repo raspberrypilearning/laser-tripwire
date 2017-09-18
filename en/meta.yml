@@ -7,8 +7,8 @@ duration: 2
 listed: true
 ingredient: false
 copyedit: true
-interestes: "jokes"
-technologies: "rpi, python, physical computing"
+interestes:
+technologies: python, physical computing
 steps:
   - title: Introduction
   - title: What you will need

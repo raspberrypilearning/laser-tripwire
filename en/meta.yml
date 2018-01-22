@@ -7,6 +7,7 @@ duration: 2
 listed: true
 ingredient: false
 copyedit: true
+curriculum: developer, design-1, programming-2, phys-comp-3, manufacture-0, community-0
 interestes: "jokes"
 technologies: "rpi, python, physical computing"
 steps:

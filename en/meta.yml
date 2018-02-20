@@ -9,7 +9,7 @@ ingredient: false
 copyedit: true
 curriculum: developer, design-1, programming-2, phys-comp-3, manufacture-0, community-0
 interests: "jokes"
-technologies: "rpi, python, physical computing"
+technologies: "raspberry-pi, python, physical computing"
 steps:
   - title: Introduction
   - title: What you will need

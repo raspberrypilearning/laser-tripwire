@@ -2,7 +2,11 @@
 
 In this resource you will use a laser pointer, a few electronic components, and a Raspberry Pi to make a laser tripwire. Each time a stealthy intruder breaks the laser beam, the Raspberry Pi will sound the alarm via a buzzer or a speaker.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/uzx3jpgcIsE" frameborder="0" allowfullscreen></iframe>
+<video width="640" height="360" controls>
+<source src="images/laser_tripwire_video.mp4" type="video/mp4">
+Your browser does not support WebM video, try FireFox or Chrome
+</video>
+
 
 By completing this project you will learn how to:
 

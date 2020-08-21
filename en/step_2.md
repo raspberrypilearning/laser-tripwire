@@ -12,4 +12,4 @@
 
 ### Software
 
-- All required software is pre-installed on Raspbian
+- All required software is pre-installed on Raspberry Pi OS

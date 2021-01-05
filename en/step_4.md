@@ -2,8 +2,7 @@
 
 There are two ways you can get you program to make some noise rather than just print 'INTRUDER'. The first is to use a buzzer that is switched on when the laser beam is broken. The second is to use the PyGame module to play a sound through some speakers.
 
-Have a look at the sections below that detail how to use buzzers and play sounds with PyGame. Choose the method your prefer, and then have a go at making some noise when the laser beam is broken. If you want to have a go at playing sounds through the speakers, then [this site](http://soundbible.com/royalty-free-sounds-1.html) has plenty of different ones to choose from. [This one in particular](http://soundbible.com/71-Dog-Growling-And-Barking.html) might be useful.
-
+Have a look at the sections below that detail how to use buzzers and play sounds with PyGame. Choose the method your prefer, and then have a go at making some noise when the laser beam is broken. If you want to have a go at playing sounds through the speakers, then [this site](http://soundbible.com/royalty-free-sounds-1.html){:target="_blank"} has plenty of different ones to choose from. [This one in particular](http://soundbible.com/71-Dog-Growling-And-Barking.html){:target="_blank"} might be useful.
 
 [[[rpi-python-piezoelectric-buzzer]]]
 [[[generic-python-playing-sound-files]]]

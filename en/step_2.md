@@ -5,8 +5,8 @@
 - A breadboard
 - A 1µF capacitor
 - A light-dependent resistor (LDR)
-- 3 female-male jumper leads (for testing)
-- 3 female-female jumper leads
+- 3 socket-pin jumper leads (for testing)
+- 3 socket-socket jumper leads
 - A laser pointer
 - A drinking straw
 

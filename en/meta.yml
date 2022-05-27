@@ -19,9 +19,11 @@ last_tested: 2017-01-01
 steps:
 - title: Introduction
 - title: What you will need
-  completion: engaged
 - title: Detecting a broken beam
 - title: Making some noise
-  completion: internal
+  completion:
+  - engaged
 - title: Building your laser tripwire
+  completion:
+  - internal
 - title: What next?

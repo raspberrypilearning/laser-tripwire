@@ -7,7 +7,7 @@ Your first step will be to create a simple prototype on a breadboard to detect w
 It's a good idea to shield your LDR to make sure that only light from the laser pointer will trigger your program. You can do this with a small roll of paper, or even more easily with a section of a drinking straw.
 
 ![ldr and straw](images/ldr-straw1.png)
-![ldr in straw](images/ldr-straw2.png)
+![ldr inserted into straw](images/ldr-straw2.png)
 
 ### Building and coding your light sensor
 
@@ -35,5 +35,5 @@ ldr.when_dark = lambda: print("INTRUDER")
 ```
 --- /hint --- --- hint ---
 Here's an animation showing how to set up the circuit and write your Python program.
-![ldr to print](images/print_with_ldr.gif)
+![Animation showing code in a code editor on how to import LightSensor function for the ldr](images/print_with_ldr.gif)
 --- /hint --- --- /hints ---

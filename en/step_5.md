@@ -1,4 +1,4 @@
-## What next?
+## Challenge
 
 --- challenge ---
 

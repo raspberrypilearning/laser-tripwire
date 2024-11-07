@@ -22,7 +22,11 @@ steps:
   completion:
   - engaged
 - title: Making some noise
-- title: Building your laser tripwire
   completion:
   - internal
+- title: Building your laser tripwire
+  completion:
+  - external
+- title: Challenge
+  challenge: true
 - title: What next?

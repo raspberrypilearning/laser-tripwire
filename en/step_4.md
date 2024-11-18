@@ -36,6 +36,53 @@ Place your container near a doorway. Then affix the laser pointer to the wall so
 
 --- /task ---
 
-If you want to run your code as soon as the Raspberry Pi boots up, you can automate tasks with **Cron**.
+### Run on boot
 
-[[[nix-bash-crontab]]]
+Your code needs to run as soon as the Raspberry Pi starts up. 
+
+You can automate tasks with **Cron**.
+
+--- task ---
+
+Open Terminal and type:
+
+```bash
+crontab -e
+```
+
+--- /task ---
+
+If this is your first time opening your crontab, then you'll be asked which text editor you would like to use.
+
+--- task ---
+
+When you see this, enter `1`
+
+```bash
+rpf@raspberrypi:~ $ crontab -e
+no crontab for rpf - using an empty one
+
+Select an editor.  To change later, run 'select-editor'.
+  1. /bin/nano        <---- easiest
+  2. /usr/bin/vim.tiny
+  3. /bin/ed
+
+Choose 1-3 [1]: 
+```
+
+--- /task ---
+
+--- task ---
+
+At the bottom of the crontab file, add this to a new line:
+
+```bash
+@reboot python3 /home/username/tripwire.py
+```
+--- /task ---
+
+--- task ---
+
+Save and exit nano by pressing `Ctrl + x` and then typing in `y` when you are prompted to save.
+
+--- /task ---

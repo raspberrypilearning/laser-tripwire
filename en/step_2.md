@@ -13,7 +13,7 @@ Shield your LDR to make sure that only light from the laser pointer will trigger
 --- /task ---
 
 
-Set up a **r**esistor-**c**apacitor circuit (RC circuit) using the 1µF capacitor and the LDR. 
+Set up a **r**esistor-**c**apacitor (RC) circuit using the 1µF capacitor and the LDR. 
 
 --- task ---
 
@@ -41,7 +41,7 @@ Attach the negative leg of the capacitor to a ground pin (labeled **GND**).
 
 Here is one possible configuration of the circuit showing the positive leg of the capacitor attached to GPIO pin 4.
 
-![circuit](images/RC-circuit.png)
+![circuit](/images/RC-circuit.png)
 
 ### The script on the Raspberry Pi
 
@@ -77,5 +77,13 @@ from gpiozero import LightSensor
 ldr = LightSensor(4))
 ldr.when_dark = lambda: print("INTRUDER")
 ```
+
+--- /task ---
+
+--- task ---
+
+Save your script to `/home/username/tripwire.py`
+
+Make sure to change the `username` to your own username!
 
 --- /task ---

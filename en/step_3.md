@@ -1,4 +1,4 @@
-## Making some noise
+## Make some noise
 
 There are two ways you can get you program to make some noise rather than just print 'INTRUDER'. 
 
@@ -34,6 +34,20 @@ If you do not have a buzzer, you could use the PyGame module to play a sound thr
 
 --- task ---
 
+Download this sound file: <a href="resources/dog_bark.wav" download>dog_bark.wav</a>
+
+--- /task ---
+
+--- task ---
+
+Move the sound file to your `/home/username/` folder.
+
+--- /task ---
+
+--- task ---
+
+Alter your `tripwire.py` Python script.
+
 ```python
 from gpiozero import LightSensor
 import pygame
@@ -41,11 +55,13 @@ import pygame
 ldr = LightSensor(4))
 
 pygame.init()
-my_sound = pygame.mixer.Sound('path/to/my/soundfile.wav')
+my_sound = pygame.mixer.Sound('/home/username/dog_bark.wav')
 
-ldr.when_dark = lambda: my_sound.play()
+ldr.when_dark = lambda: dog_bark.play()
 ```
 
-[This site](http://soundbible.com/royalty-free-sounds-1.html){:target="_blank"} has plenty of different ones to choose from. [This one in particular](http://soundbible.com/71-Dog-Growling-And-Barking.html){:target="_blank"} might be useful.
+**Note**: Change `username` to your own username!
 
 --- /task ---
+
+[This site](https://freesound.org/){:target="_blank"} has plenty of different sounds to choose from.

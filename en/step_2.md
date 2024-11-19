@@ -90,6 +90,6 @@ ldr.when_dark = lambda: print("INTRUDER")
 
 Save your script to `/home/username/tripwire.py`
 
-Make sure to change the `username` to your own username!
+**Note**: Change `username` to your username!
 
 --- /task ---

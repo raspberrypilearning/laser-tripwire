@@ -21,7 +21,7 @@ steps:
 - title: Detecting a broken beam
   completion:
   - engaged
-- title: Making some noise
+- title: Make some noise
   completion:
   - internal
 - title: Building your laser tripwire

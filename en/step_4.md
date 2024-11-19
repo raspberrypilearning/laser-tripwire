@@ -47,37 +47,26 @@ You can automate tasks with **Cron**.
 Open Terminal and type:
 
 ```bash
-crontab -e
-```
-
---- /task ---
-
-If this is your first time opening your crontab, then you'll be asked which text editor you would like to use.
-
---- task ---
-
-When you see this, enter `1`
-
-```bash
-rpf@raspberrypi:~ $ crontab -e
-no crontab for rpf - using an empty one
-
-Select an editor.  To change later, run 'select-editor'.
-  1. /bin/nano        <---- easiest
-  2. /usr/bin/vim.tiny
-  3. /bin/ed
-
-Choose 1-3 [1]: 
+sudo nano /lib/systemd/system/tripwire.service
 ```
 
 --- /task ---
 
 --- task ---
 
-At the bottom of the crontab file, add this to a new line:
+Add this text:
 
 ```bash
-@reboot python3 /home/username/tripwire.py
+[Unit]
+Description=Laser Tripwire
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/python3 /home/username/tripwire.py
+
+[Install]
+WantedBy=multi-user.target
 ```
 --- /task ---
 

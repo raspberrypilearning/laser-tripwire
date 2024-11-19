@@ -57,7 +57,7 @@ ldr = LightSensor(4))
 pygame.init()
 my_sound = pygame.mixer.Sound('/home/username/dog_bark.wav')
 
-ldr.when_dark = lambda: dog_bark.play()
+ldr.when_dark = lambda: my_sound.play()
 ```
 
 **Note**: Change `username` to your own username!

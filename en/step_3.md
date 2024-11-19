@@ -42,6 +42,8 @@ Download this sound file: <a href="resources/dog_bark.wav" download>dog_bark.wav
 
 Move the sound file to your `/home/username/` folder.
 
+**Note**: Change `username` to your username!
+
 --- /task ---
 
 --- task ---
@@ -60,7 +62,7 @@ my_sound = pygame.mixer.Sound('/home/username/dog_bark.wav')
 ldr.when_dark = lambda: my_sound.play()
 ```
 
-**Note**: Change `username` to your own username!
+**Note**: Change `username` to your username!
 
 --- /task ---
 

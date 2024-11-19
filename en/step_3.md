@@ -1,39 +1,69 @@
-## Detecting a broken beam
+## Make some noise
 
-Your first step will be to create a simple prototype on a breadboard to detect whether or not a beam of light is hitting the **l**ight-**d**ependent **r**esistor (LDR).
+There are two ways you can get you program to make some noise rather than just print 'INTRUDER'. 
 
-### Shielding the LDR
+### Buzzer
 
-It's a good idea to shield your LDR to make sure that only light from the laser pointer will trigger your program. You can do this with a small roll of paper, or even more easily with a section of a drinking straw.
+The first is to use a piezoelectric buzzer that is switched on when the laser beam is broken. 
 
-![ldr and straw](images/ldr-straw1.png)
-![ldr inserted into straw](images/ldr-straw2.png)
+--- task ---
 
-### Building and coding your light sensor
+Connect the positive leg of the buzzer to any **GPIO** pin on your Raspberry Pi, and the negative leg to a **Ground** pin. The positive leg is normally the longer of the two, and most buzzers are labelled to show which side is positive.
 
-Now you're going to need to do a couple of things:
+![Buzzer circuit](images/buzzer-circuit.png)
 
-- Set up your circuit using a capacitor and an LDR wired to your Raspberry Pi. There's an optional section below which explains how RC timing circuits work. The other section details how to use Python to detect light levels.
+--- /task ---
 
-[[[generic-theory-rc-timing-circuit]]]
-[[[rpi-python-ldr]]]
+--- task ---
 
-- Now you're ready to write a script to detect when the laser beam is broken. You can use methods from the `gpiozero` module to do this. One of your options is to use a `while True` loop containing the `wait_for_dark` method. However, a better way might be to use the `when_dark` method. If you choose this method, you need to either create a function to print `'INTRUDER'`, or you could use a lambda function.
+You can use the `Buzzer` class in `gpiozero` to turn it on and off again. The code below assumes that the buzzer has been wired to **GPIO 17**.
 
-[[[generic-python-lambda-functions]]]
-
-If you need a little help, then have a look at the hints below.
-
---- hints --- --- hint ---
-- Import the `LightSensor` class from `gpiozero`.
-- Create an 'ldr' object for the GPIO pin to which you have connected the LDR.
-- Use the `when_dark` method to trigger your `print`. The print command could either be inside another function, or called using a lambda function.
---- /hint --- --- hint ---
-Assuming you've imported your `LightSensor` class and set up an object on a GPIO pin, this single line will print 'INTRUDER' whenever the laser beam is broken:
 ```python
-ldr.when_dark = lambda: print("INTRUDER")
+from gpiozero import LightSensor, Buzzer
+ldr = LightSensor(4))
+buzzer = Buzzer(17)
+
+ldr.when_dark = lambda: buzzer.beep(0.2, 0.2, 20)
 ```
---- /hint --- --- hint ---
-Here's an animation showing how to set up the circuit and write your Python program.
-![Animation showing code in a code editor on how to import LightSensor function for the ldr](images/print_with_ldr.gif)
---- /hint --- --- /hints ---
+
+--- /task ---
+
+### Speakers
+
+If you do not have a buzzer, you could use the PyGame module to play a sound through some speakers.
+
+--- task ---
+
+Download this sound file: <a href="resources/dog_bark.wav" download>dog_bark.wav</a>
+
+--- /task ---
+
+--- task ---
+
+Move the sound file to your `/home/username/` folder.
+
+--- /task ---
+
+--- task ---
+
+Alter your `tripwire.py` Python script.
+
+```python
+from gpiozero import LightSensor
+import pygame
+
+ldr = LightSensor(4))
+
+pygame.init()
+my_sound = pygame.mixer.Sound('/home/username/dog_bark.wav')
+
+ldr.when_dark = lambda: my_sound.play()
+```
+
+**Note**: Change `username` to your own username!
+
+--- /task ---
+
+[This site](https://freesound.org/){:target="_blank"} has plenty of different sounds to choose from.
+
+--- save ---

@@ -1,21 +1,106 @@
-## Building your laser tripwire
+## Run on boot
 
-Once the circuit has been tested, you can wire up the components directly to the Raspberry Pi as shown below.
+Your code needs to run as soon as the Raspberry Pi starts up. 
 
-1.  Place one leg of the LDR and the long leg of the capacitor into a female-to-female jumper lead. Then tape it up to secure the legs.
+You can control what programs run when the system boots with `systemd`.
 
-1.  Place the remaining legs into jumper leads, then plug it all back into the Raspberry Pi.
+**Note** `systemd` is only available from Jessie versions of the Raspbian OS.
 
-![](images/assembly1.jpg)
+--- task ---
 
-You can place the Raspberry Pi and components in a housing to conceal them if you wish. Here we have used a plastic box with a hole made in it for the straw:
+Open Terminal and type:
 
-![](images/assembly2.jpg)
+```bash
+sudo nano /lib/systemd/system/tripwire.service
+```
 
-1.  Place your container near a doorway. Then affix the laser pointer to the wall so the beam is focused down the straw.
+--- /task ---
 
-1.  Now run the code and test your laser tripwire.
+--- task ---
 
-1. If you want to run your code as soon as the Raspberry Pi boots up, then have a look at the instructions below for automating tasks with **Cron**.
+Define a new unit called 'Laser Tripwire' and set it to run after the multi-user environment is available. 
 
-[[[nix-bash-crontab]]]
+```bash
+[Unit]
+Description=Laser Tripwire
+After=multi-user.target
+```
+
+--- /task ---
+
+--- task ---
+
+Configure the service.
+
+Set the `Type` to 'idle' so the 'ExecStart' command runs only when everything else has loaded.
+
+Set the `ExecStart` parameter to the command to run.
+
+```bash
+[Unit]
+Description=Laser Tripwire
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/python3 /home/username/tripwire.py
+```
+
+**Note** Change `username` to your username!
+
+--- /task ---
+
+--- task ---
+
+Add a `WantedBy` directive set to 'multi-user.target', so a directory called multi-user.target.wants is created within /etc/systemd/system (if not already available) and a symbolic link to the your unit is placed within. Disabling your unit removes the link and the dependency relationship.
+
+```bash
+[Unit]
+Description=Laser Tripwire
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/python3 /home/username/tripwire.py
+
+[Install]
+WantedBy=multi-user.target
+```
+--- /task ---
+
+--- task ---
+
+Save and exit nano by pressing `Ctrl + x` and then typing `y` when you are prompted to save.
+
+--- /task ---
+
+--- task ---
+
+Set the permission on the unit file to `644`.
+
+```bash
+sudo chmod 644 /lib/systemd/system/tripwire.service
+```
+
+--- /task ---
+
+--- task ---
+
+Tell systemd to start your unit file during the boot sequence.
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable tripwire.service
+```
+
+--- /task ---
+
+--- task ---
+
+**Test**: Reboot your Raspberry Pi to check your service runs.
+
+```bash
+sudo reboot
+```
+
+--- /task ---

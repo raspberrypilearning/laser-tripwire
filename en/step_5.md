@@ -46,7 +46,7 @@ Type=idle
 ExecStart=/usr/bin/python3 /home/username/tripwire.py
 ```
 
-**Note** Change `username` to your username!
+**Note**: Change `username` to your username!
 
 --- /task ---
 

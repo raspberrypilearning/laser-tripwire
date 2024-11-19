@@ -49,24 +49,3 @@ ldr.when_dark = lambda: my_sound.play()
 [This site](http://soundbible.com/royalty-free-sounds-1.html){:target="_blank"} has plenty of different ones to choose from. [This one in particular](http://soundbible.com/71-Dog-Growling-And-Barking.html){:target="_blank"} might be useful.
 
 --- /task ---
-
---- collapse ---
-
----
-title: I don't have pygame
----
-
-`pygame` comes pre-installed on a Raspberry Pi, but if you are on another operating system you may need to use [pip](https://pip.pypa.io/en/stable/installing/) to install it.
-On Linux and MacOS you can open a terminal and type:
-
-```bash
-sudo pip3 install pygame
-```
-
-On Windows you can open PowerShell and type:
-
-```bash
-pip3 install pygame
-```
-
---- /collapse ---

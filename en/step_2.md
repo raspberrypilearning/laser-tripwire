@@ -49,6 +49,12 @@ Write a script to detect when the laser beam is broken. You can use methods from
 
 --- task ---
 
+Open Thonny.
+
+--- /task ---
+
+--- task ---
+
 Import the `LightSensor` class from `gpiozero`.
 
 ```python

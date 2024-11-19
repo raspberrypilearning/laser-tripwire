@@ -1,5 +1,21 @@
-## What can you do now?
+## Challenge
 
-Try our [Physical computing](https://projects.raspberrypi.org/en/collections/physical_computing) project pathways where you will control and interact with the real world, combining code with electronics.
+--- challenge ---
 
-If you want to have more fun exploring Python, then you could try out any of [these projects](https://projects.raspberrypi.org/en/projects?software%5B%5D=python).
+Include other events that are triggered when the tripwire is broken. 
+
+--- task ---
+
+Take a [picture](https://projects.raspberrypi.org/en/projects/rpi-picamera-take-photo) of the intruder.
+
+--- /task ---
+
+--- task ---
+
+Use a laser component that can be run directly from the Raspberry Pi's GPIO pins. 
+
+Here's an [example of a laser](https://www.rapidonline.com/laserfuchs-70103984-red-class-2-laser-10m-1mw-3-12vdc-25ma-650nm-wavelength-57-5868) you could buy.
+
+--- /task ---
+
+--- /challenge ---

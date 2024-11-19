@@ -25,6 +25,7 @@ steps:
   completion:
   - internal
 - title: Building your laser tripwire
+- title: Run on boot
   completion:
   - external
 - title: Challenge

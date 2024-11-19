@@ -10,7 +10,7 @@ The first is to use a piezoelectric buzzer that is switched on when the laser be
 
 Connect the positive leg of the buzzer to any **GPIO** pin on your Raspberry Pi, and the negative leg to a **Ground** pin. The positive leg is normally the longer of the two, and most buzzers are labelled to show which side is positive.
 
-![circuit](/images/buzzer-circuit.png)
+![Buzzer circuit](images/buzzer-circuit.png)
 
 --- /task ---
 

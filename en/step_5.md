@@ -16,8 +16,6 @@ sudo nano /lib/systemd/system/tripwire.service
 
 --- /task ---
 
-The “ExecStart” parameter is used to specify the command we want to run. The “Type” is set to “idle” to ensure that the ExecStart command is run only when everything else has loaded. Note that the paths are absolute and define the complete location of Python as well as the location of our Python script.
-
 --- task ---
 
 Define a new unit called 'Laser Tripwire' and set it to run after the multi-user environment is available. 
@@ -54,7 +52,7 @@ ExecStart=/usr/bin/python3 /home/username/tripwire.py
 
 --- task ---
 
-Add a `WantedBy` directive to 'multi-user.target', so a directory called multi-user.target.wants is created within /etc/systemd/system (if not already available) and a symbolic link to the your unit is placed within. Disabling your unit removes the link and the dependency relationship.
+Add a `WantedBy` directive set to 'multi-user.target', so a directory called multi-user.target.wants is created within /etc/systemd/system (if not already available) and a symbolic link to the your unit is placed within. Disabling your unit removes the link and the dependency relationship.
 
 ```bash
 [Unit]
@@ -72,13 +70,13 @@ WantedBy=multi-user.target
 
 --- task ---
 
-Save and exit nano by pressing `Ctrl + x` and then typing in `y` when you are prompted to save.
+Save and exit nano by pressing `Ctrl + x` and then typing `y` when you are prompted to save.
 
 --- /task ---
 
-Set the permission on the unit file to 644 (read/write).
-
 --- task ---
+
+Set the permission on the unit file to `644`.
 
 ```bash
 sudo chmod 644 /lib/systemd/system/tripwire.service

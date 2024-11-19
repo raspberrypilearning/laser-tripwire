@@ -41,7 +41,7 @@ Attach the negative leg of the capacitor to a ground pin (labeled **GND**).
 
 Here is one possible configuration of the circuit showing the positive leg of the capacitor attached to GPIO pin 4.
 
-![circuit](/images/RC-circuit.png)
+![circuit](images/RC-circuit.png)
 
 ### The script on the Raspberry Pi
 

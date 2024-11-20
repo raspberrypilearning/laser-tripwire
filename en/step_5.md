@@ -1,8 +1,6 @@
 ## Run on boot
 
-Your code needs to run as soon as the Raspberry Pi starts up. 
-
-You can control what programs run when the system boots with `systemd`.
+You can use `systemd` to run your code when Raspberry Pi starts up.
 
 **Note** `systemd` is only available from Jessie versions of the Raspbian OS.
 
@@ -11,30 +9,14 @@ You can control what programs run when the system boots with `systemd`.
 Open Terminal and type:
 
 ```bash
-sudo nano /lib/systemd/system/tripwire.service
+sudo nano /etc/systemd/system/tripwire.service
 ```
 
 --- /task ---
 
 --- task ---
 
-Define a new unit called 'Laser Tripwire' and set it to run after the multi-user environment is available. 
-
-```bash
-[Unit]
-Description=Laser Tripwire
-After=multi-user.target
-```
-
---- /task ---
-
---- task ---
-
-Configure the service.
-
-Set the `Type` to 'idle' so the 'ExecStart' command runs only when everything else has loaded.
-
-Set the `ExecStart` parameter to the command to run.
+Create your service.
 
 ```bash
 [Unit]
@@ -44,49 +26,23 @@ After=multi-user.target
 [Service]
 Type=idle
 ExecStart=/usr/bin/python3 /home/username/tripwire.py
-```
-
-**Note**: Change `username` to your username!
-
---- /task ---
-
---- task ---
-
-Add a `WantedBy` directive set to 'multi-user.target', so a directory called multi-user.target.wants is created within /etc/systemd/system (if not already available) and a symbolic link to the your unit is placed within. Disabling your unit removes the link and the dependency relationship.
-
-```bash
-[Unit]
-Description=Laser Tripwire
-After=multi-user.target
-
-[Service]
-Type=idle
-ExecStart=/usr/bin/python3 /home/username/tripwire.py
+Environment="PULSE_RUNTIME_PATH=/run/user/1000/pulse/"
 
 [Install]
 WantedBy=multi-user.target
 ```
+**Note**: Change `username` to your username.
 --- /task ---
 
 --- task ---
 
-Save and exit nano by pressing `Ctrl + x` and then typing `y` when you are prompted to save.
-
---- /task ---
-
---- task ---
-
-Set the permission on the unit file to `644`.
-
-```bash
-sudo chmod 644 /lib/systemd/system/tripwire.service
-```
+Save and exit nano by pressing `Ctrl + x` and then press `y` when you are prompted to save.
 
 --- /task ---
 
 --- task ---
 
-Tell systemd to start your unit file during the boot sequence.
+Tell systemd to enable your new service.
 
 ```bash
 sudo systemctl daemon-reload
@@ -97,7 +53,13 @@ sudo systemctl enable tripwire.service
 
 --- task ---
 
-**Test**: Reboot your Raspberry Pi to check your service runs.
+Make sure your headphones or speakers are connected to your Raspberry Pi.
+
+--- /task ---
+
+--- task ---
+
+**Test**: your service runs when you reboot your Raspberry Pi.
 
 ```bash
 sudo reboot

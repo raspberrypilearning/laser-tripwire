@@ -69,7 +69,7 @@ Create an 'ldr' object for the GPIO pin to which you have connected the LDR.
 
 ```python
 from gpiozero import LightSensor
-ldr = LightSensor(4))
+ldr = LightSensor(4)
 ```
 
 --- /task ---
@@ -80,7 +80,7 @@ Use the `when_dark` method to trigger your `print`.
 
 ```python
 from gpiozero import LightSensor
-ldr = LightSensor(4))
+ldr = LightSensor(4)
 ldr.when_dark = lambda: print("INTRUDER")
 ```
 

@@ -20,7 +20,7 @@ You can use the `Buzzer` class in `gpiozero` to turn it on and off again. The co
 
 ```python
 from gpiozero import LightSensor, Buzzer
-ldr = LightSensor(4))
+ldr = LightSensor(4)
 buzzer = Buzzer(17)
 
 ldr.when_dark = lambda: buzzer.beep(0.2, 0.2, 20)
@@ -54,7 +54,7 @@ Alter your `tripwire.py` Python script.
 from gpiozero import LightSensor
 import pygame
 
-ldr = LightSensor(4))
+ldr = LightSensor(4)
 
 pygame.init()
 my_sound = pygame.mixer.Sound('/home/username/dog_bark.wav')
